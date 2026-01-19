@@ -1,19 +1,36 @@
-# Day 2 – Simple Calculator in C
+#include<stdio.h>
+int main()
+{
+    int num1,num2;
+    char operator;
+    printf("Enter First Nnumber: ");
+    scanf(" %d",&num1);
 
-## Description
-This program performs basic arithmetic operations
-(addition, subtraction, multiplication, division)
-using switch case in C.
+    printf("Enter Second Nnumber: ");
+    scanf(" %d",&num2);
 
-## Concepts Used
-- switch case
-- Arithmetic operators
-- User input (scanf)
-- Conditional statements
+    printf("Enter Operatior(+,-,*,/): ");
+    scanf(" %c",&operator);
 
-## Sample Output
-Enter first number: 10  
-Enter second number: 5  
-Enter operator (*):  
-Result = 50
+    switch(operator){
+        case '+':
+            printf("Result = %d\n", num1 + num2);
+            break;
+        case '-':
+            printf("Result = %d\n", num1 - num2);
+            break;
+        case '*':
+            printf("Result = %d\n", num1 * num2);
+            break;
+        case '/':
+            if(num2 != 0)
+                printf("Result = %d\n", num1 / num2);
+            else
+                printf("Error:Divion by zero\n");
+            break;
+        default:
+            printf("Invalid Operator!\n");
 
+
+    }
+}
